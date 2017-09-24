@@ -8,4 +8,5 @@ ForEach ($myfile in (Get-Childitem "C:\Test")){
 ForEach ($myfile in (Get-Childitem "C:\Test")) | Where { $_.PSChildName -match "^\d{4}.*-.*"} ) {
         Rename-Item $myfile.FullName -newname ((((( $myfile.PSChildName ) -creplace "^\d{4}.*-","" ) -creplace "\(.*\).*\(.*\)","") -creplace "\s\.",".") -creplace "^\s","")
 }
+
 #>
